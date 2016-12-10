@@ -48,16 +48,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     void setVelocity() {
 
-        if (rigid.velocity.x >= speed || rigid.velocity.x <= -speed) {
+        if (rigid.velocity.x >= speed && rigid.velocity.x > 0|| rigid.velocity.x <= -speed && rigid.velocity.x < 0) {
             print("too fast");
             dirVec.x = 0f;
         }
-        else if (rigid.velocity.x >= speed-5 || rigid.velocity.x <= -speed+5) {
+        /*else if (rigid.velocity.x >= speed-5 || rigid.velocity.x <= -speed+5) {
             print("fast");
             dirVec.x = side * 50;
-        }
+        }*/
         else {
-            dirVec.x = side * 300;
+            dirVec.x = side * 200;
         }
 
         if (Grounded())
